@@ -1,4 +1,4 @@
-﻿namespace ClassScheduleExtrationFromIcs.ISC;
+﻿namespace ClassScheduleExtrationFromIcs.ICS;
 
 internal class LectureICS
 {
@@ -25,9 +25,9 @@ internal class LectureICS
         _lecture = lectureAndClass.Split(PermittedClassValues.CLASS_INDICATOR, 10, StringSplitOptions.RemoveEmptyEntries).First();//.Split(' ').First();
         _end = ConvertEventToDateTime(dtend);
         _classes = new List<string>();
-        foreach(string classValue in PermittedClassValues.CLASS_INDICATOR)
+        foreach (string classValue in PermittedClassValues.CLASS_INDICATOR)
         {
-            if (lectureAndClass .Contains(classValue)) _classes.Add(classValue);
+            if (lectureAndClass.Contains(classValue)) _classes.Add(classValue);
         }
     }
 
@@ -35,7 +35,7 @@ internal class LectureICS
     {
         var descriptionParts = eventParts.First(x => x.Contains("DESCRIPTION")).Split(':').Where(x => !x.Contains("DESCRIPTION"));
         string description = "";
-        foreach(var part in descriptionParts)
+        foreach (var part in descriptionParts)
         {
             description += part;
         }
@@ -50,14 +50,14 @@ internal class LectureICS
 
     private DateTime ConvertEventToDateTime(string toConvert)
     {
-        string[] parts = toConvert.Split(new char[] {'T', 'Z'});
+        string[] parts = toConvert.Split(new char[] { 'T', 'Z' });
         var year = int.Parse(parts[0][0..4]);
         var month = int.Parse(parts[0][4..6]);
         var day = int.Parse(parts[0][6..8]);
         var hour = int.Parse(parts[1][0..2]);
         var min = int.Parse(parts[1][2..4]);
         var sec = int.Parse(parts[1][4..6]);
-        return new(year,month,day, hour, min, sec);
+        return new(year, month, day, hour, min, sec);
     }
 }
 

@@ -1,4 +1,4 @@
-﻿namespace ClassScheduleExtrationFromIcs.ISC;
+﻿namespace ClassScheduleExtrationFromIcs.ICS;
 
 internal class VeVentType
 {

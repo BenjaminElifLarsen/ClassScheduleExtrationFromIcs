@@ -1,6 +1,4 @@
-﻿
-using ClassScheduleExtrationFromIcs.ISC;
-using System.Text.RegularExpressions;
+﻿using ClassScheduleExtrationFromIcs.ICS;
 
 namespace ClassScheduleExtrationFromIcs.FileHandling;
 

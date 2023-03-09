@@ -2,9 +2,9 @@
 
 internal static class Startup
 {
-    private static string _foldername = "ClassSchedule";
+    private static string _folderName = "ClassSchedule";
 	private static string _path;
-	public static string GetFolderPath => _path + "\\" + _foldername;
+	public static string GetFolderPath => _path + "\\" + _folderName;
 
 	static Startup()
 	{

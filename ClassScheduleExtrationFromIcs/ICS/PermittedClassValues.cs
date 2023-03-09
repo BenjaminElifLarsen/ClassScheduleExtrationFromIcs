@@ -1,4 +1,4 @@
-﻿namespace ClassScheduleExtrationFromIcs.ISC;
+﻿namespace ClassScheduleExtrationFromIcs.ICS;
 
 internal class PermittedClassValues
 { //summary contains language, course and class. If any of these are present it is a lecture
