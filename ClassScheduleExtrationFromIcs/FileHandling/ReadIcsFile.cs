@@ -54,6 +54,6 @@ internal class ReadIcsFile
     {
         var summary = eventData.SingleOrDefault(x => x.Contains("SUMMARY;"));
         if (summary is null) return false;
-        return PermittedClassValues.CLASS_INDICATOR.Any(x => summary.Contains(x));
+        return PermittedClassValues.CLASS_INDICATOR.Any(summary.Contains);
     }
 }

@@ -14,12 +14,12 @@ internal static class Startup
 
 	private static bool DoesFolderExist()
 	{
-		return Directory.Exists(_path + "\\" + _foldername);
+		return Directory.Exists(GetFolderPath);
 	}
 
 	private static void CreateFolder()
 	{
-		Directory.CreateDirectory(_path + "\\" + _foldername);
+		Directory.CreateDirectory(GetFolderPath);
 	}
 
 

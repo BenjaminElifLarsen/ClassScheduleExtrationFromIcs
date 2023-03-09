@@ -6,9 +6,15 @@ internal class LectureICS
     private DateTime _stamp;
     private DateTime _start;
     private string _location;
-    private string _lectureAndClass;
+    private string _lecture;
     private DateTime _end;
     private List<string> _classes;
+
+    public DateTime Start => _start;
+    public DateTime End => _end;
+    public IEnumerable<string> Classses => _classes;
+    public string Location => _location;
+    public string Lecture => _lecture;
 
     private LectureICS(string description, string distamp, string distart, string location, string lectureAndClass, string dtend)
     {
@@ -16,12 +22,12 @@ internal class LectureICS
         _stamp = ConvertEventToDateTime(distamp);
         _start = ConvertEventToDateTime(distart);
         _location = location;
-        _lectureAndClass = lectureAndClass;
+        _lecture = lectureAndClass.Split(PermittedClassValues.CLASS_INDICATOR, 10, StringSplitOptions.RemoveEmptyEntries).First();//.Split(' ').First();
         _end = ConvertEventToDateTime(dtend);
         _classes = new List<string>();
         foreach(string classValue in PermittedClassValues.CLASS_INDICATOR)
         {
-            if (_lectureAndClass.Contains(classValue)) _classes.Add(classValue);
+            if (lectureAndClass .Contains(classValue)) _classes.Add(classValue);
         }
     }
 
